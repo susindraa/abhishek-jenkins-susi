@@ -2,7 +2,7 @@ pipeline {
   agent {
     docker {
       image 'abhishekf5/maven-abhishek-docker-agent:v1'
-      args '-v /c/ProgramData/Jenkins/.jenkins/workspace:/workspace -w /workspace' // mount Docker socket to access the host's Docker daemon
+       args '-v /var/run/docker.sock:/var/run/docker.sock -w /home/jenkins/workspace' // mount Docker socket to access the host's Docker daemon
     }
   }
   stages {
